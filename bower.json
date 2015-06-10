@@ -1,0 +1,17 @@
+{
+  "name": "homeworkJune9",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "underscore": "~1.8.3",
+    "moment": "~2.10.3"
+  }
+}

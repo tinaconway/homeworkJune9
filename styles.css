@@ -1,0 +1,372 @@
+.page {
+  display: none;
+}
+
+.active {
+  display: inline-block;
+}
+
+
+
+header {
+  background-color: #F5F5F5;
+  height: 49px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+
+
+}
+
+.headerContent {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  width: 85%;
+
+}
+
+.headerContent a  {
+  display: inline-block;
+  font-family: Helvetica;
+  color: black;
+  font-weight: bold;
+}
+
+.headerContent span  {
+  display: inline-block;
+}
+
+.headerContent form  {
+  display: inline-block;
+}
+
+.searchBar  {
+  padding-left: 10px;
+}
+
+.navButtons {
+  padding-left: 10px;
+}
+
+.picButton {
+  padding-left: 200px;
+}
+
+.picButton img {
+  height: 27px;
+  vertical-align: bottom;
+}
+.myName  {
+  padding-left: 10px;
+
+}
+
+.plusArrow {
+  padding-left: 10px;
+}
+
+.octicon-inbox {
+  padding-left: 10px;
+}
+
+.octicon-gear {
+  padding-left: 10px;
+}
+
+.octicon-sign-out {
+  padding-left: 10px;
+}
+
+.wrapper  {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+section {
+  display: inline-block;
+  width: 59%;
+  vertical-align: top;
+  margin-top: 40px;
+
+}
+
+
+
+ul.nav.nav-tabs{
+  display: inline-block;
+}
+
+ul.nav.nav-tabs a {
+  font-family: Helvetica;
+  color: black;
+
+}
+
+a.btn.btn-default {
+  display: inline-block;
+  font-weight: bold;
+  vertical-align: top;
+  margin-left: 200px;
+}
+
+.rowBottom form {
+  display: inline-block;
+}
+
+.rowBottom a {
+  display: inline-block;
+}
+
+#searchButton {
+  margin-left: 0;
+  background-color: #F4F4F4;
+
+}
+
+.searchBar2 input {
+  height: 34px;
+}
+
+#allButton {
+  color: black;
+  font-weight: bold;
+  padding-left: 40px;
+}
+
+.navButtonsBody {
+  padding-left: 10px;
+}
+
+#newButton {
+  background-color: #82D465;
+  margin-left: 7px;
+  color: white;
+
+}
+
+#newButton span {
+  padding-right: 5px;
+}
+
+.rowBottom {
+  text-align: left;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #F4F4F4;
+}
+
+.repositories {
+  display: block;
+  margin-bottom: 10px;
+
+}
+
+.repositories h3 {
+  display: inline-block;
+}
+
+.repositories p {
+  display: inline-block;
+  float: left;
+  padding-left: 8px;
+  color: grey;
+  font-weight: bold;
+}
+
+.octicon-git-branch.grey {
+  display: inline-block;
+  padding-left: 8px;
+  color: grey;
+  font-weight: bold;
+}
+
+.octicon-heart {
+  display: inline-block;
+  padding-left: 8px;
+  color: grey;
+  font-weight: bold;
+}
+
+#updated {
+  display: block;
+  float: left;
+  clear: both;
+  color: grey;
+  padding: 0;
+
+}
+.containRepo {
+  float: right;
+  line-height: 5;
+}
+
+.repositories a  {
+  float: left;
+}
+.repositories span {
+  color: grey;
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.repoContent {
+  display: block;
+}
+
+.repoWrapper {
+  height: 120px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.repoWrapper h3 {
+  color: #4078C1;
+  font-size: 1.6em;
+}
+
+aside {
+  text-align: center;
+  display: inline-block;
+  width: 24%;
+  margin-top: 40px;
+  padding-right: 10px;
+}
+
+aside img {
+  width: 85%;
+  border-radius: 5%;
+}
+
+aside h3 {
+  text-align: left;
+  padding-left: 24px;
+  font-weight: bold;
+}
+
+aside h4 {
+  text-align: left;
+  padding-left: 27px;
+  color: grey;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #F4F4F4;
+}
+
+.octicon-clock {
+  color: grey;
+}
+.joined span {
+  display: inline-block;
+
+}
+.joined {
+  text-align: left;
+  border-bottom: 1px solid #F4F4F4;
+  padding-bottom: 22px;
+  line-height: 3.5;
+  padding-left: 27px;
+
+}
+
+.social {
+
+}
+.social div {
+  display: inline-block;
+  text-align: center;
+
+}
+
+.social span p{
+  display: block;
+  font-size: 1.2em;
+}
+
+.social span {
+  font-size: 2.2em;
+  color: #4078C1;
+  font-weight: bold;
+}
+
+.social p {
+  color: grey;
+  font-size: .93em;
+}
+
+#pad {
+  padding-left: 20px;
+}
+
+#organization {
+  font-size: 1.2em;
+}
+
+
+#ironYard {
+  width: 25%;
+  float: left;
+  padding-left: 27px;
+
+}
+
+.footerWrap {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+span.mega-octicon.octicon-mark-github.bottom-cat {
+  padding-left: 190px;
+  padding-right: 190px;
+  color: grey;
+}
+
+a.navButtons.bottom {
+  font-size: .9em;
+}
+
+
+.activityWrapper {
+  height: 60px;
+  border-bottom: 1px solid #EEEEEE;
+  text-align: left;
+  line-height: 4;
+
+}
+
+.wrapLeft {
+  display: inline-block;
+  width: 4%;
+}
+
+.wrapRight {
+  display: inline-block;
+
+  width: 92%;
+}
+
+.wrapRight
+
+.activityPage {
+  float: left;
+  line-height: 4;
+  width: 100%;
+}
+div.page.activityPage.active {
+  width: 100%;
+}
+
+
+.styleName {
+  color: #4078c1;
+}
+
+.styleTime {
+  color: grey;
+}

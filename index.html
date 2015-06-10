@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="octicons/octicons.css" media="screen" title="no title" charset="utf-8">
+  <script src="bower_components/moment/src/moment.js"></script>
+  <meta charset="UTF-8">
+  <title>Github</title>
+
+
+  <script type="html/template" id="repos">
+    <div class ="repoWrapper">
+    <a href="#"><h3> <%= name %> </h3></a>
+    <div class = "containRepo"><p> <%= language %> </p>
+    <span class="octicon octicon-heart grey"></span>
+    <span> <%= stargazers %> </span>
+    <span class="octicon octicon-git-branch"></span>
+    <span> <%= forks %> </span>
+    </div>
+    <span id = "updated">Updated <%= updated %> </span>
+    </div>
+  </script>
+
+  <script type = "html/template" id="follows">
+    <div class = "followers">
+      <span> <%= followers %> </span>
+      <p>Followers</p>
+    </div>
+    <div class = "starred" id="pad">
+      <span> <%= starred %> </span>
+      <p>Starred</p>
+    </div>
+    <div class = "follow" id ="pad">
+      <span> <%= follow %> </span>
+      <p>Follow</p>
+    </div>
+
+
+  </script>
+
+
+<script type="html/template" id="activityFeed">
+  <div class="activityWrapper">
+  <div class="wrapLeft">
+    <% if (type === "PushEvent") { %>
+    <span class="octicon octicon-git-commit"></span>
+    <% } %>
+    <% if (type === "ForkEvent") { %>
+      <span class="octicon octicon-git-branch"></span>
+    <% } %>
+    <% if (type === "CreateEvent" && ref === "repository") { %>
+      <span class="octicon octicon-repo"></span>
+    <% } %>
+    <% if (type === "CreateEvent" && ref === "branch") { %>
+      <span class="octicon octicon-git-branch"></span>
+    <% } %>
+
+
+  </div>
+
+  <div class="wrapRight">
+    <a href="#">tinaconway </a>
+    <% if (type === "PushEvent") { %>
+      <span>pushed to master at </span>
+      <span class="styleName"><%= name %></span>
+      <span class="styleTime"><%= time %></span>
+    <% } %>
+    <% if (type === "CreateEvent" && ref === "repository") { %>
+      <span>created repository </span>
+      <span class="styleName"><%= name %></span>
+      <span class="styleTime"><%= time %></span>
+    <% } %>
+    <% if (type === "CreateEvent" && ref === "branch") { %>
+      <span>created branch  </span>
+      <%= branch %>
+      <span>at </span>
+      <span class="styleName"><%= name %></span>
+      <span class="styleTime"><%= time %></span>
+    <% } %>
+    <% if (type === "ForkEvent") { %>
+      <span>forked </span>
+      <span class="styleName"><%= name %></span>
+      <span class="styleTime"><%= time%></span>
+    <% } %>
+    <% if (type === "MemberEvent") { %>
+      <span>added </span>
+      <%= login %>
+      <span>to </span>
+      <span class="styleName"><%= name %></span>
+      <span class="styleTime"><%= time %></span>
+
+    <% } %>
+
+  </div>
+</div>
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class= "headerContent">
+    <span class="mega-octicon octicon-mark-github"></span>
+    <form class = "searchBar"><input type="text" size = "40" value="Search GitHub"></form>
+    <a class = "navButtons" href="https://github.com/explore">Explore</a>
+    <a class = "navButtons" href="https://gist.github.com/">Gist</a>
+    <a class = "navButtons" href="https://github.com/blog">Blog</a>
+    <a class = "navButtons" href="https://help.github.com/">Help</a>
+    <a class = "picButton" href=""><img src="https://avatars1.githubusercontent.com/u/12474662?v=3&s=40" alt=""></a>
+    <a class="myName" href="">tinaconway</a>
+    <a class = "plusArrow" href=""><span class="octicon octicon-plus"></span><span class="octicon octicon-triangle-down"></span></a>
+    <span class="octicon octicon-inbox"></span>
+    <span class="octicon octicon-gear"></span>
+    <span class="octicon octicon-sign-out"></span>
+  </div>
+</header>
+
+<div class= "wrapper">
+  <aside>
+    <a href="#"><img src="https://avatars2.githubusercontent.com/u/12474662?v=3&s=460" alt=""></a>
+
+    <h3>Tina Conway</h3>
+    <h4>tinaconway</h4>
+    <div class = "joined">
+      <span class="octicon octicon-clock"></span>
+      <span>Joined on May 16, 2015 </span>
+    </div>
+
+    <div class = "social">
+
+    </div>
+    <h3 id="organization">Organizations</h3>
+    <a href="#" id ="ironYardLink"><img id="ironYard" src="https://avatars0.githubusercontent.com/u/12236563?v=3&s=84" alt=""></a>
+  </aside>
+
+  <section>
+    <div class = "rowTop">
+      <ul class="nav nav-tabs">
+      <li role="presentation"><a href="#"><span class="octicon octicon-diff-added"></span>
+          Contributions</a></li>
+      <li role="presentation"><a href="#" rel=".repoPage"><span class="octicon octicon-repo"></span>
+          Repositories</a></li>
+      <li role="presentation"><a href="#" rel=".activityPage"><span class="octicon octicon-rss"></span>
+                Public Activity</a></li>
+      </ul>
+      <a href="#" class="btn btn-default" role="button"><span class="octicon octicon-pencil"></span>
+          Edit Profile</a>
+    </div>
+
+  <!-- REPO PAGE -->
+
+  <div class ="page repoPage active">
+    <div class = "rowBottom">
+      <form class = "searchBar2"><input type="text" size = "29" value="Find a repository..."></form>
+      <a href="#" class="btn btn-default" id ="searchButton" role="button">Search</a>
+      <a class = "navButtonsBody" id ="allButton" href="#">All</a>
+      <a class = "navButtonsBody" href="#">Public</a>
+      <a class = "navButtonsBody" href="#">Private</a>
+      <a class = "navButtonsBody" href="#">Sources</a>
+      <a class = "navButtonsBody" href="#">Forks</a>
+      <a class = "navButtonsBody" href="#">Mirrors</a>
+      <a href="#" class="btn btn-default" id ="newButton" role="button"><span class="octicon octicon-repo"></span>New</a>
+    </div>
+    <div class = "repositories"></div>
+  </div>
+
+
+  <!-- ACTIVITY PAGE -->
+
+
+    <div class="page activityPage">
+    <div class = "activities">
+
+
+
+      </div>
+
+    </div>
+
+  </section>
+</div>
+<footer>
+  <div class="footerWrap">
+    <span>&copy;</span>
+    <span>2015 GitHub Inc.</span>
+    <a class = "navButtons bottom" href="https://help.github.com/articles/github-terms-of-service/">Terms</a>
+    <a class = "navButtons bottom" href="https://help.github.com/articles/github-privacy-policy/">Privacy</a>
+    <a class = "navButtons bottom" href="https://help.github.com/articles/github-security/">Security</a>
+    <a class = "navButtons bottom" href="https://github.com/contact">Contact</a>
+    <span class="mega-octicon octicon-mark-github bottom-cat"></span>
+    <a class = "navButtons bottom" href="https://status.github.com/">Status</a>
+    <a class = "navButtons bottom" href="https://developer.github.com/">API</a>
+    <a class = "navButtons bottom" href="https://training.github.com/">Training</a>
+    <a class = "navButtons bottom" href="https://github.myshopify.com/">Shop</a>
+    <a class = "navButtons bottom" href="https://github.com/blog">Blog</a>
+    <a class = "navButtons bottom" href="https://github.com/about">About</a>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="bower_components/underscore/underscore.js"> </script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"> </script>
+  <script type="text/javascript" src="activity.js"></script>
+  <script type="text/javascript" src="user.js"></script>
+  <script type="text/javascript" src="repos.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+
+
+</body>
+</html>
